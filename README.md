@@ -18,7 +18,11 @@ console.log("計算結果：" + (123 + 456));
 console.log("2" - 1); //文字列ー数値
 console.log("2" * 3); //文字列×数値
 console.log("2" / 4); //文字列÷数値
+```
 
+## 変数の宣言
+
+```js
 //変数の宣言・代入
 let a; //変数の宣言　//ES6=2015
 a = 10; //値の代入(数値型)
@@ -28,7 +32,9 @@ a = "Hello"; //値の再代入(文字列型)
 console.log(a);
 
 //let a = "World"; //変数の宣言と代入を同時に行う。さらに再宣言なので、エラーとなる。
+```
 
+```js
 //定数の宣言・代入
 const PI = 3.14;
 console.log(PI);
@@ -36,21 +42,44 @@ console.log(PI);
 //再代入
 //PI = 3.1415926535;
 //const PI;
+```
 
+```js
 //複合代入演算子
 let n = 5;
 n = n + 2;
 console.log(n); //7
 
 let n2 = 5;
-n2 += 2; //複合代入演算子 n2 = n2 + 2と同じ
+n2 += 2; //複合代入演算子 n2 = n2 + 2 と同じ
 console.log(n2);
 
 //インクリメント
 let n3 = 5;
-n3++; //インクリメント　1足す // ++n;でもOKと書かれているが基本はn++;で書く
+n3++; //インクリメント　 1 足す // ++n;でも OK と書かれているが基本は n++;で書く
 console.log(n3); //6
 ```
+
+//メロンを加えたい。
+//ul 要素を取り入れる
+const element = document.querySelector("ul");
+console.log(element);
+
+      //selectorってCSSのセレクターなので
+      const element2 = document.querySelector("#fruitslist");
+      console.log(element2);
+
+      //classもいける？
+      const element3 = document.querySelector(".listbox_list");
+      console.log(element3);
+
+      //新しい要素を作る
+      const lilast = document.createElement("li");
+      console.dir(lilast); //dirに変更。オブジェクトの中身が見れる
+      lilast.textContent = "メロン";
+      console.log(lilast);
+
+````
 
 ## 10 月 5 日
 
@@ -69,18 +98,18 @@ console.log(n3); //6
 基本は、外部 JS ファイルを読み込むが、HTML 内に各場合は、`</body>`の上に書く。
 
 ```html
-<!doctype html>
-<html lang=ja>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>演習</title>
-</head>
-<body>
-</script>
-</body>
+  </head>
+  <body>
+    <script></script>
+  </body>
 </html>
-```
+````
 
 ### フロントエンドロードマップ
 
