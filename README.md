@@ -44,6 +44,8 @@ console.log(PI);
 //const PI;
 ```
 
+## 複合代入演算子
+
 ```js
 //複合代入演算子
 let n = 5;
@@ -60,26 +62,28 @@ n3++; //インクリメント　 1 足す // ++n;でも OK と書かれている
 console.log(n3); //6
 ```
 
+## ドキュメントオブジェクト
+
+```js
 //メロンを加えたい。
 //ul 要素を取り入れる
 const element = document.querySelector("ul");
 console.log(element);
 
-      //selectorってCSSのセレクターなので
-      const element2 = document.querySelector("#fruitslist");
-      console.log(element2);
+//selectorってCSSのセレクターなので
+const element2 = document.querySelector("#fruitslist");
+console.log(element2);
 
-      //classもいける？
-      const element3 = document.querySelector(".listbox_list");
-      console.log(element3);
+//classもいける？
+const element3 = document.querySelector(".listbox_list");
+console.log(element3);
 
-      //新しい要素を作る
-      const lilast = document.createElement("li");
-      console.dir(lilast); //dirに変更。オブジェクトの中身が見れる
-      lilast.textContent = "メロン";
-      console.log(lilast);
-
-````
+//新しい要素を作る
+const lilast = document.createElement("li");
+console.dir(lilast); //dirに変更。オブジェクトの中身が見れる
+lilast.textContent = "メロン";
+console.log(lilast);
+```
 
 ## 10 月 5 日
 
@@ -109,7 +113,7 @@ console.log(element);
     <script></script>
   </body>
 </html>
-````
+```
 
 ### フロントエンドロードマップ
 
