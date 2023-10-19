@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>複数要素の追加</title>
+  </head>
+  <body>
+    <h1>人気フルーツ一覧</h1>
+    <ul id="fruitslist" class="listbox_list"></ul>
+    <script>
+      //配列フルーツ宣言・値を代入
+      const fruits = ["りんご", "もも", "バナナ"];
+
+      //バナナがほしい
+      console.log(element);
+      //ulをJavaScript空間に引きずり込む
+      const element = document.querySelector("#fruitslist");
+      console.log(element);
+      //fruitsの要素数文だけでfor文で回す
+      for (let i = 0; i < fruits.length; i++) {
+        //liを創出する
+        const lilast = document.cresteElement("li");
+
+        //liに値を(果物→配列fruitsの中にある)を代入
+        console.log(fruits[i]); //りんご・もも・バナナが取れる
+        lilast.textContent = fruits[i];
+        element.appendChild(lilast);
+      }
+
+      const element = document.querySelector(".boxFooterLink");
+      console.log(element);
+
+      const menus = ["カリキュラム", "就職実績"];
+
+      for (const menuText of menus) {
+        const liElement = document.createElement("li");
+
+        liElement.textContent = menuText;
+
+        element.appendChild(liElement);
+      }
+    </script>
+  </body>
+</html>

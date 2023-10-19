@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson</title>
+  </head>
+  <body>
+    <dl class="recipe">
+      <dt>カップヌードルの作り方</dt>
+      <dd>フタを途中まで開ける</dd>
+      <dd>お湯を線まで入れてフタをする</dd>
+    </dl>
+
+    <script>
+      const element = document.querySelector(".recipe");
+      console.log(element);
+      //dl要素を取得する
+      //constは変数を宣言する
+      //const 変数名＝変数に入れる値;
+
+      const ddlast = document.createElement("dd");
+      //新しくdd要素を作成する
+
+      ddlast.innerText = "3分待ってできあがり";
+      //dd要素にテキストを入れる
+
+      element.appendChild(ddlast);
+      //ddの最後に挿入する
+
+      //宣言・代入
+      const animals = ["dog", "cat", "bird"];
+
+      //確認
+      console.log(animals);
+      //長さ
+      console.log(animals.length);
+
+      //cat
+      console.log(animals[1]);
+
+      for (let i = 0; i < 9; i++){
+        console.log(i); //0から8が表示されます。
+        //このiを使って7の段をコンソールに表示させてください。
+
+        console.log(7*(i+1));
+
+        //文字列の連結と組み合わせて
+        // console.log(7+"×"+(i+1)+"="+7*(i+1));
+
+        //テンプレートリテラル
+ console.log(`7 × ${i} = ${7 * i}`);
+    }
+
+  </script>
+</body>
+</html>
+
+    </script>
+  </body>
+</html>
