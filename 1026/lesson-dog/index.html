@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>要素の取得と追加</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section>
+      <h1>犬のギャラリー</h1>
+      <div class="card1">
+        <h2>柴犬の散歩</h2>
+        <p>雨だったけど、散歩に連れて行った</p>
+      </div>
+      <div class="card2">
+        <h2>秋田犬の寝顔</h2>
+        <p>普段は不細工だけど、寝顔はかわいい</p>
+      </div>
+      <img src="images/dog001.png" alt="柴犬" id="pochi" class="shibaDog" />
+      <img src="images/dog002.png" alt="秋田犬" id="hachiko" class="akitaDog" />
+    </section>
+    <script>
+      //ここに記述していきます
+
+      // 変数 ① に柴犬の画像を取得する
+      const shiba = document.querySelector(".shibaDog");
+      console.log(shiba);
+      // 変数 ② に秋田犬の画像を取得する
+      const akita = document.querySelector(".akitaDog");
+      console.log(akita);
+      // 変数 ③ に挿入する<div class="card1">を取得する
+      const card1 = document.getElementsByTagName("div");
+      console.log(card1);
+      // 変数 ④ に挿入する<div class="card2">を取得する
+      const card2 = document.getElementsByTagName("div");
+      console.log(card2);
+      // 変数 ③ に柴犬が入った変数 ① を appendChild で追加する
+      const pochisCard = document.querySelector(".card1");
+      pochisCard.appendChild(pochi);
+      // 変数 ④ に秋田犬が入った変数 ② を appendChild で追加する
+      const hachikoCard = document.querySelector(".card2");
+      hachikoCard.appendChild(hachiko);
+    </script>
+
+    <script>
+      const shibainu = document.querySelector(".shibaDog");
+      shiba.setAttribute("src", "images/dog002.png");
+      //Attributeは属性という意味
+    </script>
+  </body>
+</html>
