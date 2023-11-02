@@ -1,12 +1,90 @@
 # 2023 年後期「JavaScript 基礎」授業課題
 
-## 1019
+```js
+
+```
+
+# 1019
 
 ー document オブジェクトと DOM
 ーコレクション
 ー条件分岐・繰り返し処理
 
-## 1012
+## window オブジェクトを表示
+
+### window オブジェクトを表示する
+
+トライデントコンピュータ専門学校の Web サイトを開き、Devtools の console に
+
+```js
+console.log(window); //ブラウザのコンソールにwindowというオブジェクトを出力するためのコード
+//console.log()は括弧内の値をコンソールに表示するJavaScriptのメソッド
+```
+
+と入力する
+
+```js
+console.log(window.document.title); //window.document内のtitleプロパティを取得できる
+```
+
+## 要素を取得する
+
+```js
+document.querySelector("h1"); //h1の要素が取得される
+```
+
+```js
+document.querySelectorAll("p"); //ページ内のp要素全てが選択される
+```
+
+querySelector は条件に当てはまった一番最初の要素が返される
+querySelectorAll は一致する全ての要素が返される
+
+## sample7-7
+
+```html
+<ul id="fruitslist" class="listbox_list">
+  <li>りんご</li>
+  <li>みかん</li>
+  <li>バナナ</li>
+</ul>
+```
+
+```js
+//メロンを加えたい。
+//ul要素を取得する
+const element = document.querySelector("ul");
+console.log(element);
+
+//selectorはCSSのセレクターなので
+const element2 = document.querySelector("#fruitslist"); //document.querySelectorメソッドを使用してHTML文書内で特定の要素を選択する
+//#fruitslistはCSSセレクターでid属性がfruitslistである要素を選択する
+//選択した要素は変数element2に格納される
+console.log(element2);
+//変数element2に格納された要素をコンソールに出力する
+
+//classもいける？
+const element3 = document.querySelector(".listbox_list");
+console.log(element3);
+
+//新しい要素を作る
+const lilast = document.createElement("li"); //新しい<li>要素を作成し、その要素をlilastへ格納
+console.dir(lilast); //dirに変更。オブジェクトの中身が見れる
+lilast.textContent = "メロン";
+console.dir(lilast);
+//console.dirメソッドは指定されたJavaScriptオブジェクトのプロパティをすべて表示させることができる
+
+//リストの最後に追加する。
+//上で作った変数lilastの<li>メロン</li>を変数element内の<ul></ul>に追加する
+element.appendChild(lilast);
+
+//いちごを追加したい
+const lilast2 = document.createElement("li");
+lilast2.textContent = "いちご";
+element.appendChild(lilast2);
+```
+
+# 1012
 
 ーリテラルと演算子
 
@@ -89,7 +167,7 @@ lilast.textContent = "メロン";
 console.log(lilast);
 ```
 
-## 1005
+# 1005
 
 - インターネットの基本について理解する。
 - Web の基本的な仕組みを理解する。
@@ -100,8 +178,8 @@ console.log(lilast);
 ### JavaScript を書く場所
 
 1. HTML ファイルの中
-1. 外部 JS ファイルの中
-1. ブラウザのコンソール
+2. 外部 JS ファイルの中
+3. ブラウザのコンソール
 
 基本は、外部 JS ファイルを読み込むが、HTML 内に各場合は、`</body>`の上に書く。
 
