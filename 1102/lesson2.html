@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>イベント演習</title>
+    <style>
+      .redText {
+        color: red;
+      }
+      .bigText {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <span>JavaScript</span
+      >（ジャバスクリプト）とは、プログラミング言語のひとつである。
+    </p>
+    <button class="redder">赤くなる</button>
+    <button class="bigger">大きくなる</button>
+
+    <script>
+      //element.setAttribute("class","??")
+      const text = document.querySelector("p span");
+      //赤くなるイベント
+      const redBtn = document.querySelector(".redder");
+      redBtn.addEventListener("click", function () {
+        //classListでトグる
+        text.classList.toggle("redText");
+        redBtn.textContent = "もとに戻す";
+        // redBtn.innerText = "もとに戻す";
+      });
+
+      //大きくなるイベント
+      const bigBtn = document.querySelector(".bigger");
+      bigBtn.addEventListener("click", function () {
+        //classListでトグる
+        text.classList.toggle("bigText");
+        bigBtn.textContent = "もとに戻す";
+        // bigBtn.innerText = "もとに戻す";
+
+        //if文でもとに戻すから大きくなるに戻す
+        if (text.classList.contains("bigText")) {
+          bigBtn.innerText = "もとに戻す";
+        } else {
+          bigBtn.innerText = "大きくなる";
+        }
+      });
+    </script>
+  </body>
+</html>

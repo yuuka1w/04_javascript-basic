@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1 id="header">ヘッドスピン</h1>
+
+    <div class="btnArea">
+      <div class="button dancing">Let’sダンス</div>
+      <div class="button stop">ストップ</div>
+      <div class="button change">ダンサーチェンジ</div>
+    </div>
+    <div class="imgArea">
+      <img
+        src="images/dance_breakdance_headspin.png"
+        alt="ブレイクダンサーいらすと"
+      />
+    </div>
+    <script>
+      //ここに記述します。
+
+      const dancingBtn = document.querySelector(".dancing");
+      console.log(dancingBtn);
+
+      const stopBtn = document.querySelector(".stop");
+      console.log(stopBtn);
+
+      const changeBtn = document.querySelector(".change");
+      console.log(changeBtn);
+
+      const dancer = document.querySelector(".imgArea img");
+      console.log(dancer);
+
+      dancingBtn.addEventListener("click", function () {
+        // 画像要素のクラスを "dance" に設定
+        dancer.setAttribute("class", "dance");
+      });
+
+      stopBtn.addEventListener("click", function () {
+        dancer.removeAttribute("class");
+      });
+
+      stopBtn.addEventListener("click", function () {});
+    </script>
+  </body>
+</html>
