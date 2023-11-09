@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson2</title>
+  </head>
+  <body>
+    <script>
+      const num = Math.round(Math.random() * 100);
+      console.log("現在の値：" + num);
+      const rem = num % 2; //余り　2で割ってどうなると偶数か
+      console.log(rem);
+      //偶数を表示するif文を書いてください。
+      //   console.log( num +"は偶数です。");
+      if (rem == 0) {
+        console.log("数値は偶数です");
+      }
+      //ifがfalseだった場合
+      else {
+        console.log("数値は奇数です");
+      }
+    </script>
+  </body>
+</html>
