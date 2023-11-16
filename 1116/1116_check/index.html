@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .globalmenu {
+        background-color: #000;
+        width: 50%;
+        height: 100vh;
+        position: relative;
+        transition: transform 200ms ease-in-out;
+        transform: translateX(-90%);
+      }
+
+      .open {
+        transform: translateX(0);
+      }
+      .menu {
+        margin: 0;
+        list-style-type: none;
+        color: #fff;
+        padding: 1rem;
+      }
+      button {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <span>トライデントコンピュータ専門学校</span
+      >は<span>愛知県名古屋市</span>にあり、1984年に<span>開校</span>。IT技術者<span>多数育成</span>。現在、情報処理系<span>3学科</span>と<span>CG／ゲーム開発／Webデザイン／CAD</span>などの学科もあり、卒業生の<span>就職実績</span>も豊富です。
+    </p>
+
+    <nav class="globalmenu">
+      <ul class="menu">
+        <li>メニュー項目01</li>
+        <li>メニュー項目02</li>
+        <li>メニュー項目03</li>
+        <li>メニュー項目04</li>
+      </ul>
+      <button>→</button>
+    </nav>
+
+    <h1 style="text-align: center">48</h1>
+    <button style="margin: auto; display: block">レッツゴー</button>
+
+    <h1>カラーボタン</h1>
+    <div class="colorlist">
+      <button id="red">赤色</button>
+      <button id="blue">青色</button>
+      <button id="green">緑色</button>
+      <button id="yellow">黄色</button>
+      <button id="pink">桃色</button>
+      <button id="purple">紫色</button>
+    </div>
+
+    <script>
+      //① 変数schoolを作成し、文字列型で「トライデントコンピュータ専門学校」と代入してください。
+      const school = "トライデントコンピュータ専門学校";
+      console.log(school);
+      //② 変数courseを作成し、文字列型で「Webデザイン学科」と代入してください。
+      const course = "Webデザイン学科";
+      //③ console.logの引数内で、schoolとcourseを文字列連結して、「トライデントコンピュータ専門学校Webデザイン学科」と表示させてください。
+      console.log("トライデントコンピュータ専門学校" + "Webデザイン学科");
+
+      //①下記HTMLより、猫の画像の画像のみを取得し、変数catImgに代入してください。
+      //   const catImg = document.querySelector(".img_cat");
+      //   console.log(catImg);
+      //②変数catImgからalt属性を取得し、console.logで「猫の画像」と表示してください。
+      //   const catImg = ducument.querySelector("alt");
+      //   console.log("猫の画像")
+
+      //①ゴレンジャーのメンバー5名、アカレンジャー、アオレンジャー、ミドレンジャー、キレンジャー、モモレンジャーを要素とした配列gorangerを作ってください。
+      const goranger = [
+        "アカレンジャー",
+        "アオレンジャー",
+        "ミドレンジャー",
+        "キレンジャー",
+        "モモレンジャー",
+      ];
+      //②console.logに変数gorangerと添字を使ってモモレンジャーと表示されるようにしてください。
+      console.log(goranger[4]);
+      //③for文で、すべての要素をconsoleに表示されるようにしてください。
+      for (let i = 0; i < goranger.length; i++) {
+        console.log(i);
+        console.log(goranger[i]);
+      }
+
+      //下記HTMLのspan要素をクリックすると、①span要素内のテキストがconsoleに表示されるようにしてください。
+      //   const text = document.querySelectorAll("p span");
+      //   console.log(text);
+
+      //   span.addEventListener("click", function () {
+      //     console.log(text);
+      //   });
+      //②さらに、文字が赤く、太くなるようにJavaScriptのみで操作してください。
+
+      //下記HTMLをスライドで開くメニューにしてください。開いた状態からCSSのコメントアウトを解除して格納（閉じた）状態から始めてください。
+      //①変数btnを設定し、button要素を代入します。
+      //②変数btnにクリックイベントを設定します。
+      //③nav class="globalmenu"を変数gnavに代入します。
+      //④btnをクリックすると、classListでopenをトグルで設定してください。
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // ② 変数btnを設定し、button要素を代入します。
+        const btn = document.querySelector("button");
+
+        // ③ nav class="globalmenu"を変数gnavに代入します。
+
+        // ④ btnをクリックすると、classListでopenをトグルで設定してください。
+        btn.addEventListener("click", function () {
+          const gnav = document.querySelector(".globalmenu");
+          gnav.classList.toggle("open");
+        });
+      });
+
+      //    下記HTMLでは、「レッツゴー」ボタンをクリックすると、h1内が1〜3の数字でランダムに変更します。
+      // ifelse文で数字の表示が1のとき、AKB48のサイトのリンクに、数字が2のとき、SKE48のサイトへのリンクに、数字が3のとき、NMB48のサイトへのリンクに、数字が4のとき、HKT48のサイトへのリンクに変わる仕組みを配列akbsites（各グループのURL）活用して、setAttributeで設定するプログラミングをしてください。
+
+      const akbsites = [
+        "https://www.akb48.co.jp/",
+        "https://www.ske48.co.jp/",
+        "http://www.nmb48.com/",
+        "http://www.hkt48.jp/",
+      ];
+      document.querySelector("button").addEventListener("click", function () {
+        //0〜３の数値
+        const title = Math.floor(Math.random() * 4);
+        //必要な要素を取得
+        const h1Elm = document.querySelector("h1");
+        const alink = document.createElement("a");
+        //数値に1を足す
+        alink.innerText = title + 1;
+
+        //ここに記述します。
+
+        //ここまで
+
+        //h1の中身をノードで入れ替える
+        h1Elm.replaceChildren(alink);
+      });
+
+      //下記HTMLのbuttonをクリックすると、id属性から色名を取得し、背景（background-color）に設定するJavaScriptを記述してください。
+      const colorList = document.querySelector(".colorlist");
+      const color_array = ["red", "blue", "green"];
+
+      colorList.addEventListener("click", function (event) {
+        // クリックされた要素がbutton要素である場合のみ処理を実行
+        if (event.target.tagName === "BUTTON") {
+          // クリックされたボタンのid属性を取得
+          const colorId = "id";
+
+          // 背景色を設定
+          body_elemment.style.backgroundColor = color_array;
+        }
+      });
+    </script>
+  </body>
+</html>

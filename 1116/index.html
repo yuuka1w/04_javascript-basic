@@ -1,0 +1,53 @@
+HTML
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>振り返り問題④</title>
+  </head>
+  <body>
+    <p class="result"></p>
+    <button>表示</button>
+    <script>
+      const word = ["Java", "JavaScript", "Ruby", "Go", "PHP"];
+
+      //buttonを変数resultBtnに、p class="result"を変数resultAreaに読み込みます。
+      const resultBtn = document.querySelector("button");
+      const resultArea = document.querySelector("p.result");
+      //resultBtnにクリックイベントを設定し、const numを移動します。
+      resultBtn.addEventListener("click", function () {
+        const num = Math.round(Math.random() * 4);
+        console.log(word[num]);
+
+        if (num === 1) {
+          resultArea.innerText = "JavaScript";
+        } else {
+          resultArea.innerText = "違う言語です";
+        }
+      });
+
+      //配列wordにnumを添え字として、if文で判定します。
+      //JavaScript（添字が1）だったとき、resultAreaにJavaScriptと表示（配列から取得）、それ以外だったら「違う言語です」と表示させる
+
+      const n1 = 1;
+      const n2 = 2;
+
+      if (n2 === 1) {
+        console.log(true);
+      } else {
+        console.log(false);
+      }
+
+      if (n1 === 1 && n2 === 1) {
+        console.log(true);
+      } else {
+        console.log(false);
+      }
+    </script>
+  </body>
+</html>
