@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>犬猫派</title>
+  </head>
+  <body>
+    <ul>
+      <li>犬</li>
+      <li>猫</li>
+    </ul>
+    <p class="result"></p>
+
+    <script>
+      const dogBtn = document.querySelector("li");
+      const catBtn = document.querySelector("li:nth-child(2)");
+      const resultArea = document.querySelector("result");
+      console.log(dogBtn, catBtn);
+
+      //関数式
+
+      console.log("あなたは、◯派です。");
+      const animalCheck = function (animal) {
+        resultArea.textContent = "あなたは" + animal + "派です";
+      };
+
+      dogBtn.addEventListener("click", function () {
+        console.dir(this);
+        animalCheck(this.textContent);
+      });
+
+      catBtn.addEventListener("click", function () {
+        console.dir(this);
+        animalCheck(this.textContent);
+      });
+    </script>
+  </body>
+</html>

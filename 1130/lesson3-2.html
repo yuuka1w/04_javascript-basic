@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //関数の定義
+
+      //   const yoshinoya = function (gyudon1, weight, option, price) {
+      //     console.log(
+      //       gyudon1 + "の" + weight + "、" + option + "で" + price + "円"
+      //     );
+
+      //     //テンプレートリテラル
+      //     console.log(`${gyudon}の{weight}、${option}で${price}円`);
+      //   };
+
+      //   //関数の実行
+      //   //複数の引数を読み込む場合は、,で区切る。
+      //   yoshinoya("牛丼", "並盛", "つゆだく", 388); //牛丼の並盛、つゆだくで 388 円
+      //   yoshinoya("豚丼", "大盛", "たまご", 592); //豚丼の大盛、たまごで 592 円
+
+      //引数が配列
+      const sumCard = function (card) {
+        let total = 0;
+        //すべてを足す処理
+        for (let i = 0; i < card.length; i++) {
+          total += card[i]; //toral = total + card[i]
+        }
+        console.log(total);
+      };
+
+      //配列
+      const card_list = [1, 2, 3, 4];
+
+      //関数の実行、引数には配列
+      sumCard(card_list); //10
+    </script>
+  </body>
+</html>
