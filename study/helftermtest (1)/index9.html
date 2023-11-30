@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>論理演算子</title>
+  </head>
+  <body>
+    <script>
+      // 以下の要件に基づいて、JavaScript プログラムを完成させてください。
+
+      //変数 age が 18 歳未満の場合、"未成年" というメッセージを message 変数に代入してください。
+      // 変数 age が 18 歳以上かつ 65 歳未満の場合、"成人" というメッセージを message 変数に代入してください。
+      // 変数 age が 65 歳以上の場合、"シニア" というメッセージを message 変数に代入してください。
+
+      const age = Math.floor(Math.random() * 100);
+      console.log(age);
+      let message;
+
+      if (age < 18) {
+        message = "未成年";
+      } else if (age >= 18 && age <= 65) {
+        message = "成人";
+      } else if (age >= 65) {
+        message = "シニア";
+      } else {
+        message = "error";
+      }
+
+      console.log(message);
+    </script>
+  </body>
+</html>

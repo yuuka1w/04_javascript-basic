@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>中間確認テスト5</title>
+    <!--styleはheadの中に-->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .globalmenu {
+        background-color: #000;
+        width: 50%;
+        height: 100vh;
+        position: relative;
+        transition: transform 200ms ease-in-out;
+        transform: translateX(-90%);
+      }
+      .open {
+        transform: translateX(0);
+      }
+      .menu {
+        margin: 0;
+        list-style-type: none;
+        color: #fff;
+        padding: 1rem;
+      }
+      button {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="globalmenu">
+      <ul class="menu">
+        <li>メニュー項目01</li>
+        <li>メニュー項目02</li>
+        <li>メニュー項目03</li>
+        <li>メニュー項目04</li>
+      </ul>
+      <button>→</button>
+    </nav>
+    <script>
+      const Btn = document.querySelector("button");
+      Btn.addEventListener("click", function () {
+        const gnav = document.querySelector(".globalmenu");
+        gnav.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>
