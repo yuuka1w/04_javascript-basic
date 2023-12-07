@@ -20,22 +20,25 @@ for (let i = 0; i < btns.length; i++) {
   });
 }
 
-nextBtn.addEventListener("click", function () {
-  if (count === 2) {
-    count = 0;
-    imageArea.setAttribute("src", "images/" + fujiImg_list[count]);
-  } else {
+const nextBtnClick = function () {
+  if (count < fujiImg_list.length - 1) {
     count++;
     imageArea.setAttribute("src", "images/" + fujiImg_list[count]);
+  } else {
+    count = 0;
+    imageArea.setAttribute("src", "images/" + fujiImg_list[count]);
   }
-});
+};
 
-preBtn.addEventListener("click", function () {
+const prevBtnClick = function () {
   if (count === 0) {
-    count = 2;
+    count = fujiImg_list.length - 1;
     imageArea.setAttribute("src", "images/" + fujiImg_list[count]);
   } else {
     count--;
     imageArea.setAttribute("src", "images/" + fujiImg_list[count]);
   }
-});
+};
+
+preBtn.addEventListener("click", prevBtnClick);
+nextBtn.addEventListener("click", nextBtnClick);
