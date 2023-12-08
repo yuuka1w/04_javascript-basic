@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScriptの基本</title>
+  </head>
+  <body>
+    <script>
+      //定数を宣言する
+      const PI = 3.14;
+      console.log(PI);
+
+      //複合代入演算
+      let n = 5;
+      n = n + 2;
+      console.log(n); //7
+
+      //インクリメントとデクリメント
+      let a = 5;
+      a++; //++;はn=n+1;と同じ意味　変数に1を足すという意味
+      console.log(a);
+
+      //文字列と演算子の優先順位
+      //文字列＋数値
+      console.log("円周率は" + 3.14 + "です"); //「円周率は3.14です」と表示される
+
+      //文字列+数値の計算
+      console.log("計算結果" + 123 + 456); //「計算結果123456」と表示される
+      //文字列が前にあった場合後ろにある数字は文字列として扱われる
+
+      //数値の計算+文字列
+      console.log(124 + 456 + "となりました");
+      //数字は先に計算され、文字列があとから付け足される
+
+      //文字列+(数値の計算)
+      console.log("計算結果" + (123 + 456));
+      //数学と同じように括弧が先に計算される
+
+      //変数の宣言と代入
+      let b = 10;
+      console.log(b);
+
+      c = "Hello";
+      console.log(c);
+    </script>
+  </body>
+</html>
