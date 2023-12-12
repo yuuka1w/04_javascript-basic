@@ -2,6 +2,35 @@
 
 ```
 
+# document オブジェクトとループ(for 文)
+
+・documemt オブジェクトと DOM
+
+・繰り返し処理
+
+・その他の要素内への代入メソッド
+
+```js
+//トライデントのWebサイトのコンソールに打ち込む
+console.log(window.document.title);
+//学校法人 河合塾学園　トライデントコンピュータ専門学校 | ゲーム,CG ,Web,CAD,IT,情報,セキュリティ分野で活躍できる人材を育成する名古屋の専門学校 と表示される
+```
+
+```js
+//トライデントのWebサイトコンソールに打ち込む
+document.querySelector("h1");
+//h1の要素が取得される
+```
+
+```js
+document.querySelectorAll("p");
+//p要素が全て取得される
+```
+
+---
+
+---
+
 # JavaScript の基本
 
 \*演算子
@@ -61,4 +90,11 @@ console.log(b);
 
 c = "Hello";
 console.log(c);
+```
+
+## 確認問題
+
+```js
+const b = "プログラミング";
+console.log(b.length); //lengthは文字列の長さや配列の要素数を取得することができる
 ```
