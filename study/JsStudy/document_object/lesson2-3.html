@@ -14,7 +14,13 @@
 
     <script>
       const element = document.querySelector("dl");
+      console.log(element);
+
       const ddlast = document.createElement("dd");
+      ddlast.textContent = "3分待って出来上がり";
+      console.log(ddlast);
+
+      element.appendChild(ddlast);
     </script>
   </body>
 </html>
