@@ -1,0 +1,49 @@
+@charset "UTF-8";
+body {
+  background-color: #fff0f5;
+}
+
+.slide {
+  display: flex;
+  width: 80%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.slide img {
+  width: 100%;
+  min-width: 100%;
+  transition: all 0.5s ease-in;
+}
+
+.slide img:first-child {
+  margin-left: -100%;
+}
+
+.leftBtn {
+  background-color: #65bbe9;
+  color: #fff;
+  padding: 10px 30px;
+  transition: 1s;
+}
+
+.leftBtn:hover {
+  background-color: #ef5b9c;
+}
+
+.rightBtn {
+  background-color: #65bbe9;
+  color: #fff;
+  padding: 10px 30px;
+}
+
+.rightBtn:hover {
+  background-color: #ef5b9c;
+  transition: 1s;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin: 6rem;
+}
