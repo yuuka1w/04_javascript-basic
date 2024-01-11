@@ -24,11 +24,88 @@
 
 ### [1221]　富士山スライドショー
 
+### [0111]フォームとオブジェクト
+
+# 0111
+
+## フォーム
+
+```js
+const Btn = document.querySelector("#btn");
+Btn.addEventListener("click", function () {
+  const namedata = document.querySelector("#name").value;
+  if (namedata === "") {
+    alert("名前を入力してください");
+  } else {
+    alert("あなたのお名前:" + namedata);
+  }
+});
+```
+
+## オブジェクト
+
+```js
+const person = {
+  name: "",
+  age: 0,
+  information: function () {
+    return "名前:" + this.name + "\n 年齢:" + this.age;
+  },
+};
+
+person.name = "山田太郎";
+person.age = 18;
+
+//element.textContent=なになに
+
+//console.log(person.name, person.age);
+
+console.log(person.information());
+
+const myCar_list = {}; //空のオブジェクトを作成
+myCar_list.make = "Ford";
+myCar_list.model = "Mustang";
+myCar_list.year = 1969;
+console.log(myCar_list);
+//{make: 'Ford', model: 'Mustang', year: 1969}
+
+//modelを取得
+console.log(myCar_list.model);
+
+//yearを取得
+console.log(myCar_list.year);
+
+myCar_list["2021"] = "51年"; //ブランケット認定
+
+console.log(myCar_list);
+//オブジェクトは順番を担保しない
+console.log(myCar_list["2021"]);
+
+const dict = {
+  apple: "りんご",
+  banana: "ばなな",
+  orange: "オレンジ",
+};
+
+//新規登録
+dict.grape = "ぶどう";
+
+//削除
+delete dict.orange;
+console.log(dict);
+//{apple:'林檎',banana:'バナナ',grape:'ぶどう'}
+
+//再代入
+dict.apple = "りんご";
+console.log(dict);
+//{apple:'りんご',banana:'バナナ',grape:'ぶどう'}
+```
+
 # 1221
 
 ### 富士山スライドショー
 
-````js
+```js
 //初期化
 const slide = document.querySelector(".slide");
 const images = document.querySelectorAll(".slide img");
@@ -44,12 +121,12 @@ slide.insertBefore(images[images.length - 1], images[0]);
 //button 左
 const leftBtn = document.querySelector(".leftBtn");
 const leftSlider = function () {
-const slideImages = document.querySelectorAll(".slide img");
-console.log(slideImages); //現在クリックをした時点での HTML
-//左側の余分な画像を、最後に移動
-slide.appendChild(slideImages[0]);
-//入っている style 属性を削除
-slideImages[1].removeAttribute("style");
+  const slideImages = document.querySelectorAll(".slide img");
+  console.log(slideImages); //現在クリックをした時点での HTML
+  //左側の余分な画像を、最後に移動
+  slide.appendChild(slideImages[0]);
+  //入っている style 属性を削除
+  slideImages[1].removeAttribute("style");
 };
 
 leftBtn.addEventListener("click", leftSlider);
@@ -69,13 +146,13 @@ leftBtn.addEventListener("click", leftSlider);
 const rightBtn = document.querySelector(".rightBtn");
 
 const rightSlider = function () {
-//ローカル変数の特徴　このブロックの中にしか有効ではない　スコープ
-const slideImages = document.querySelectorAll(".slide img");
-console.log(slideImages);
-slideImages[1].removeAttribute("style");
+  //ローカル変数の特徴　このブロックの中にしか有効ではない　スコープ
+  const slideImages = document.querySelectorAll(".slide img");
+  console.log(slideImages);
+  slideImages[1].removeAttribute("style");
 
-slideImages[0].style.marginLeft = "0";
-slide.insertBefore(slideImages[slideImages.length - 1], slideImages[0]);
+  slideImages[0].style.marginLeft = "0";
+  slide.insertBefore(slideImages[slideImages.length - 1], slideImages[0]);
 };
 
 rightBtn.addEventListener("click", rightSlider);
@@ -91,7 +168,6 @@ rightBtn.addEventListener("click", rightSlider);
 // });
 
 window.setInterval(leftSlider, 2000); //2000 ミリ秒
-
 ```
 
 # 1214
@@ -132,7 +208,7 @@ window.setInterval(leftSlider, 2000); //2000 ミリ秒
     <img src="images/enemy005.png" alt="ロクテンマオウ" />
   </div>
 </section>
-````
+```
 
 ```html
 <div class="buttons">
