@@ -26,6 +26,40 @@
 
 ### [0111]フォームとオブジェクト
 
+### [0118]オブジェクトの配列
+
+# 0118
+
+```js
+const tableElm = document.querySelector(".table_gafam");
+
+for (let co of corporation) {
+  const trElm = document.createElement("tr");
+  console.log(co);
+  tableElm.appendChild(trElm);
+  for (let key in co) {
+    console.log(key);
+    console.log(co[key]);
+    const tdElm = document.createElement("td");
+    //危険：オブジェクトは順番を担保しない
+    tdElm.innerHTML = co[key];
+    trElm.appendChild(tdElm);
+  }
+  tableElm.appendChild(trElm);
+}
+
+//   for (let i = 0; i < corporation.length; i++) {}
+
+//   練習4-1 p183
+const array = [];
+array.push(1);
+array.push(2);
+array.push(3);
+for (let num of array) {
+  console.log(num);
+}
+```
+
 # 0111
 
 ## フォーム
