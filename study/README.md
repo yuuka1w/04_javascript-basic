@@ -28,6 +28,44 @@
 
 ### [0118]オブジェクトの配列
 
+### [0125]json
+
+# 0125
+
+```js
+const npb2023 = [
+  { Team: "阪神タイガース", Wins: 85, Loss: 53, Ties: 5, Rate: 0.616 },
+  { Team: "広島東洋カープ", Wins: 74, Loss: 65, Ties: 4, Rate: 0.532 },
+  {
+    Team: "横浜DeNAベイスターズ",
+    Wins: 74,
+    Loss: 66,
+    Ties: 3,
+    Rate: 0.529,
+  },
+  { Team: "読売ジャイアンツ", Wins: 71, Loss: 70, Ties: 2, Rate: 0.504 },
+  {
+    Team: "東京ヤクルトスワローズ",
+    Wins: 57,
+    Loss: 83,
+    Ties: 3,
+    Rate: 0.407,
+  },
+  { Team: "中日ドラゴンズ", Wins: 56, Loss: 82, Ties: 5, Rate: 0.406 },
+];
+
+//下記の JSON const npb を for…of 文、for…in 文を使って、すべての要素を console に表示させてください。
+//配列を処理
+
+//[]配列リテラル、{}オブジェクトリテラル、""文字列リテラル、``テンプレートリテラル
+for (let team of npb2023) {
+  console.log(team); //要素=各チームの成績
+  for (let key in team) {
+    console.log(team[key]);
+  }
+}
+```
+
 # 0118
 
 ```js
