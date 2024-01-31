@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sample7-7</title>
+  </head>
+  <body>
+    <h1>果物の種類</h1>
+    <ul id="fruitslist" class="listbox__list">
+      <li>りんご</li>
+      <li>みかん</li>
+      <li>バナナ</li>
+    </ul>
+
+    <dl class="recipe">
+      <dt>カップヌードルの作り方</dt>
+      <dd>フタを途中まで開ける</dd>
+      <dd>お湯を線まで入れてフタをする</dd>
+    </dl>
+
+    <h1>人気フルーツ一覧</h1>
+    <ul id="fruitslist" class="listbox__list"></ul>
+
+    <!--リストを操作するDOM操作のスクリプト-->
+    <script>
+      const element = document.querySelector("ul");
+      const lilast = document.createElement("li");
+      lilast.textContent = "メロン";
+      element.appendChild(lilast);
+
+      const cup = document.querySelector("dl");
+      const ddLast = document.createElement("dd");
+      ddLast.textContent = "3分待って出来上がり";
+      cup.appendChild(ddLast);
+
+      const popular = document.querySelector("#fruitslist");
+      const fruits = ["りんご", "もも", "バナナ"];
+      for (let i = 0; i < fruits.length; i++) {
+        const liLast = document.createElement("li");
+        liLast.textContent = fruits[i];
+        popular.appendChild(liLast);
+      }
+    </script>
+  </body>
+</html>

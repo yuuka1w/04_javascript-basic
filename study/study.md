@@ -27,6 +27,40 @@ document.querySelectorAll("p");
 //p要素が全て取得される
 ```
 
+```html
+<h1>果物の種類</h1>
+<ul id="fruitslist" class="listbox__list">
+  <li>りんご</li>
+  <li>みかん</li>
+  <li>バナナ</li>
+</ul>
+```
+
+```js
+const element = document.querySelector("ul");
+// 要素の取得
+const lilast = document.createElement("li");
+// 新しいオブジェクトの追加
+lilast.textContent = "メロン";
+element.appendChild(lilast);
+// 子要素を挿入
+```
+
+```html
+<dl class="recipe">
+  <dt>カップヌードルの作り方</dt>
+  <dd>フタを途中まで開ける</dd>
+  <dd>お湯を線まで入れてフタをする</dd>
+</dl>
+```
+
+```js
+const cup = document.querySelector("dl");
+const ddLast = document.createElement("dd");
+ddLast.textContent = "3分待って出来上がり";
+cup.appendChild(ddLast);
+```
+
 ---
 
 ---
