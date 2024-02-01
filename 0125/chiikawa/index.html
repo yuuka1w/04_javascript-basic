@@ -83,18 +83,28 @@
       const content = document.querySelector(".contents");
 
       for (let i = 0; i < chiikawas.length; i++) {
-        console.log(chiikawas[i]);
+        // console.log(chiikawas[i]);
 
         const dlElm = document.createElement("dl");
 
         // for (let key in chiikawas[i]) {
-        const dtElm = `<dt><span>第${chiikawas[i]["story"]}話</span>${chiikawas[i]["title"]}</dt>`; //テンプレートリテラル
+        const dtElm = `<dt><span>第${chiikawas[i]["story"]}話</span>${chiikawas[i]["title"]}</dt> `;
 
+        //テンプレートリテラル
         dlElm.innerHTML = dtElm;
         content.appendChild(dlElm);
-
+        const ddElm = document.createElement("dd");
+        const a = document.createElement("a");
         for (let key in chiikawas[i]) {
-          console.log(chiikawas[i][key]);
+          console.log(chiikawas[i]["id"]);
+          a.setAttribute(
+            "href",
+            "https://www.youtube.com/watch?v=" + chiikawas[i]["id"]
+          );
+          a.innerHTML = `<img src="./images/${chiikawas[i]["image"]}">`;
+
+          ddElm.appendChild(a);
+          dlElm.appendChild(ddElm);
         }
       }
     </script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul class="weather">
+      <li>晴れ</li>
+      <li>曇り</li>
+      <li>雨</li>
+      <li>雪</li>
+    </ul>
+    <p class="opinion"></p>
+
+    <script>
+      const weathers = document.querySelectorAll(".weather li");
+      for (let word of weathers) {
+        word.addEventListener("click", () => {
+          say(word.textContent);
+        });
+      }
+      const opinionContainer = document.querySelector(".opinion");
+
+      function say(weather) {
+        switch (weather) {
+          case "晴れ":
+            opinionContainer.textContent =
+              "今日は良い天気で、気持ちが良いです。";
+            break;
+          case "雨":
+            opinionContainer.textContent =
+              "雨音が心地よく、静かな時間を楽しめます。";
+            break;
+          case "曇り":
+            opinionContainer.textContent =
+              "曇り空、穏やかな一日が待っている感じです。";
+            break;
+          case "雪":
+            opinionContainer.textContent =
+              "雪景色が美しく、雪合戦やスキーに最適です。";
+            break;
+          default:
+            opinionContainer.textContent = "";
+        }
+      }
+
+      for (let word of weathers) {
+        word.addEventListener("click", () => {
+          say(word.textContent);
+        });
+      }
+    </script>
+  </body>
+</html>

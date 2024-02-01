@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const user = {
+        name: "鈴木花子",
+        age: 19,
+        gender: "女性",
+        email: "suzukihanako@example.com",
+        isAdmin: false,
+        address: {
+          street: "名古屋市中区栄1-2-3",
+          city: "名古屋市",
+          prefecture: "愛知県",
+          zipCode: "460-0008",
+        },
+        phoneNumbers: ["052-1234-5678", "070-9876-5432"],
+        hobbies: ["音楽鑑賞", "ショッピング", "カフェ巡り"],
+        birthday: new Date(2004, 0, 15), // 誕生日を YYYY, MM - 1, DD 形式で設定
+        accountBalance: 500.5,
+        preferredLanguages: ["日本語"],
+        subscriptionStatus: "アクティブ",
+        school: "名古屋市立高校",
+      };
+
+      console.log("性別:", user.gender);
+
+      console.log("名古屋市:", user.address.city);
+
+      // ③ 誕生日を「2004年2月15日」表記で
+      const formattedBirthday = `${user.birthday.getFullYear()}年${
+        user.birthday.getMonth() + 2
+      }月${user.birthday.getDate()}日`;
+      console.log("誕生日:", formattedBirthday);
+
+      // ④ カフェ巡り
+      let selectedHobby = null;
+      for (let hobby of user.hobbies) {
+        if (hobby === "カフェ巡り") {
+          selectedHobby = hobby;
+          break;
+        }
+      }
+
+      // カフェ巡りが選ばれた場合、コンソールに表示
+      if (selectedHobby) {
+        console.log("趣味:", selectedHobby);
+      } else {
+        console.log("カフェ巡りは選ばれていません。");
+      }
+
+      // ⑤ 〒460-0008 愛知県名古屋市中区栄1-2-3
+      const formattedAddress = `〒${user.address.zipCode} ${user.address.prefecture}${user.address.city}${user.address.street}`;
+      console.log("住所:", formattedAddress);
+    </script>
+  </body>
+</html>

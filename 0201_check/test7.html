@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul class="list">
+      <li>バナナ</li>
+      <li>りんご</li>
+      <li>みかん</li>
+      <li>パイナップル</li>
+    </ul>
+    <button class="resultBtn">結果を表示</button>
+    <ul class="result"></ul>
+
+    <script>
+      const fruitsArray = ["キウイ", "パパイヤ", "マンゴー"];
+
+      const listItems = document.querySelectorAll(".list li");
+      const resultBtn = document.querySelector(".resultBtn");
+      const resultContainer = document.querySelector(".result");
+
+      // クリックされたリストアイテムを配列に追加
+      listItems.forEach((item) => {
+        item.addEventListener("click", function () {
+          if (!fruitsArray.includes(this.textContent)) {
+            fruitsArray.push(this.textContent);
+            this.classList.add("selected");
+          }
+        });
+      });
+
+      // 結果を表示ボタンがクリックされたときの処理
+      resultBtn.addEventListener("click", function () {
+        // 結果表示エリアを初期化
+        resultContainer.innerHTML = "";
+
+        // fruitsArrayの内容を表示
+        fruitsArray.forEach((fruit) => {
+          const listItem = document.createElement("li");
+          listItem.textContent = fruit;
+          resultContainer.appendChild(listItem);
+        });
+
+        // リストアイテムの選択状態を解除
+        listItems.forEach((item) => {
+          item.classList.remove("selected");
+        });
+      });
+    </script>
+  </body>
+</html>

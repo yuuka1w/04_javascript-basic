@@ -18,7 +18,11 @@
 
 ### [1109] if 文で条件分岐、左右
 
-### [1116]
+### [1116] クリックイベント
+
+### [1130]
+
+### [1207]スライドショウ
 
 ### [1214] コールバック関数、アロー関数
 
@@ -29,6 +33,40 @@
 ### [0118]オブジェクトの配列
 
 ### [0125]json
+
+### [0201]
+
+# 0201
+
+```js
+const content = document.querySelector(".contents");
+
+for (let i = 0; i < chiikawas.length; i++) {
+  // console.log(chiikawas[i]);
+
+  const dlElm = document.createElement("dl");
+
+  // for (let key in chiikawas[i]) {
+  const dtElm = `<dt><span>第${chiikawas[i]["story"]}話</span>${chiikawas[i]["title"]}</dt> `;
+
+  //テンプレートリテラル
+  dlElm.innerHTML = dtElm;
+  content.appendChild(dlElm);
+  const ddElm = document.createElement("dd");
+  const a = document.createElement("a");
+  for (let key in chiikawas[i]) {
+    console.log(chiikawas[i]["id"]);
+    a.setAttribute(
+      "href",
+      "https://www.youtube.com/watch?v=" + chiikawas[i]["id"]
+    );
+    a.innerHTML = `<img src="./images/${chiikawas[i]["image"]}">`;
+
+    ddElm.appendChild(a);
+    dlElm.appendChild(ddElm);
+  }
+}
+```
 
 # 0125
 
@@ -244,6 +282,218 @@ window.setInterval(leftSlider, 2000); //2000 ミリ秒
 
 # 1214
 
+```js
+const dog = function () {
+  return "わんわん";
+};
+//関数の定義
+function dog2() {
+  return "バウワウ";
+}
+
+//関数dogを実行=()があるから
+console.log(dog()); //わんわん
+console.log(dog2()); //バウワウ
+
+//アロー関数の関数式　※アロー関数は関数式で使う
+const cat = () => {
+  return "にゃーにゃー";
+};
+
+//鳴き方を決めたい　アロー関数+引数
+const animal = (voice) => {
+  return voice;
+};
+
+//関数animalの実行
+console.log(animal("みゃあみゃあ"));
+
+//関数catの実行=()があるから
+console.log(cat());
+
+//thisは予約語なので変数名・関数名に使えない
+const thisElm = document.querySelector("p");
+console.log(thisElm);
+
+thisElm.addEventListener("click", (e) => {
+  console.log("クリック");
+  // console.log(this.textContent);
+  console.log(e.target.innerText);
+});
+```
+
+```js
+const concatenateSpace = function (lastName, firstName) {
+  return lastName + " " + firstName;
+};
+
+//関数式2
+const useConcatenate = function (name, func) {
+  let concatName = func(name[0], name[1]);
+  console.log("結合結果：" + concatName);
+};
+
+let nameParam = ["岩本", "悠花"]; //配列
+
+//関数式2の実行(引数1=配列,引数2=関数の名前)
+useConcatenate(nameParam, concatenateSpace);
+
+//結合結果：中田 雄二
+
+//コールバック関数基本
+//関数式1
+const testFunc = function (func) {
+  //funcには関数式2
+  //関数の実行後すぐに表示
+  console.log("testFuncが実行されました");
+  //2秒後
+  setTimeout(function () {
+    func();
+  }, 2000);
+};
+
+//関数式2
+const callback = function () {
+  console.log("callbackが実行されました");
+  //コンソールにメッセージを表示する関数
+};
+
+//関数式1を実行
+//callbackは関数式2の関数名
+testFunc(callback);
+```
+
+# 1207
+
+```js
+//引数1と引数2を足す関数の定義
+const addition = function (a, b) {
+  const c = a + b;
+  console.log(c); //出力を関数が決める
+  //addition という名前の関数を定義
+  //引数 a と b を受け取り、それらを足し算してその結果をコンソールに出力
+};
+
+//関数の実行
+addition(10, 11);
+//addition 関数を引数 10 と 11 で呼び出す
+//コンソールに21と表示される
+addition(30, "6");
+//JavaScriptでは型変換が行われ、文字列 "6" が数値 6 に変換されてから足し算が行われる
+//結果306と表示される
+
+//戻り値のある関数の定義
+const addition2 = function (a, b) {
+  const c = a * b;
+  return c; //戻り値
+
+  //addition2 という名前の関数を定義
+  //引数 a と b を受け取り、それらを掛け算してその結果を戻り値として返す
+};
+
+//関数の実行
+const result = addition2(5, 5);
+//addition2 関数を引数 5 と 5 で呼び出し、その戻り値を変数 result に代入
+//5 * 5 の結果の25が表示
+console.log(result); //コンソールに25と表示される
+```
+
+```js
+const cake = 450;
+
+const takeOutBtn = document.querySelector(".takeOut");
+//HTML内でクラスが "takeOut" である要素を取得し、takeOutBtn に格納
+console.log(takeOutBtn);
+const eatIn = document.querySelector(".eatIn");
+console.log(eatIn);
+//HTML内でクラスが "eatIn" である要素を取得し、eatIn に格納
+const result = document.querySelector(".taxIn");
+//HTML内でクラスが "taxIn" である要素を取得し、result に格納
+console.log(result);
+
+//関数の定義
+const calculation = function (cake, tax) {
+  const result = cake + cake * tax; //商品＋消費税
+  return result; //戻り値
+
+  //calculation という名前の関数を定義
+  //引数として商品の価格 cake と消費税率 tax を受け取り、商品価格に対する消費税を計算して結果を戻り値として返す
+  //クリックされると calculation 関数が呼び出され、ケーキの価格にテイクアウトの消費税率（ここでは 0.08）をかけた結果が result 要素に表示
+};
+
+takeOutBtn.addEventListener("click", function () {
+  //関数の実行
+  const price = calculation(cake, 0.08);
+  result.innerHTML = price;
+});
+
+eatIn.addEventListener("click", function () {
+  //関数の実行
+  const price = calculation(cake, 0.1);
+  result.innerHTML = price;
+
+  //クリックされると calculation 関数が呼び出される
+  //ケーキの価格に店内飲食の消費税率（ここでは 0.1）をかけた結果が result 要素に表示
+});
+```
+
+# 1130
+
+```js
+const dogBtn = document.querySelector("li");
+//HTML内の最初の <li> 要素を取得して、変数 dogBtn に格納
+const catBtn = document.querySelector("li:nth-child(2)");
+//HTML内の2番目の <li> 要素（:nth-child(2)は2番目の子要素を指定）を取得して、変数 catBtn に格納
+const resultArea = document.querySelector("result");
+//HTML内の <result> 要素を取得して、変数 resultArea に格納
+console.log(dogBtn, catBtn);
+
+//関数式
+
+console.log("あなたは、◯派です。");
+const animalCheck = function (animal) {
+  resultArea.textContent = "あなたは" + animal + "派です";
+  //animalCheck という名前の関数式を定義します。この関数は引数 animal を受け取り、resultArea のテキストコンテンツを設定
+};
+
+dogBtn.addEventListener("click", function () {
+  console.dir(this);
+  animalCheck(this.textContent);
+  //犬のボタン (dogBtn) がクリックされたときのイベントリスナーを設定
+  //ボタンがクリックされると、this.textContent が animalCheck 関数に渡され、resultArea の内容が更新
+});
+
+catBtn.addEventListener("click", function () {
+  console.dir(this);
+  animalCheck(this.textContent);
+});
+```
+
+# 1116
+
+```js
+const word = ["Java", "JavaScript", "Ruby", "Go", "PHP"];
+
+//buttonを変数resultBtnに、p class="result"を変数resultAreaに読み込みます。
+const resultBtn = document.querySelector("button");
+//HTML内の <button> 要素を取得して変数 resultBtn に格納
+const resultArea = document.querySelector("p.result");
+//HTML内の <p> 要素でクラスが "result" の要素を取得して変数 resultArea に格納
+
+resultBtn.addEventListener("click", function () {
+  //resultBtnにクリックイベントを設定し、const numを移動します。
+  const num = Math.round(Math.random() * 4);
+  console.log(word[num]);
+
+  if (num === 1) {
+    resultArea.innerText = "JavaScript";
+  } else {
+    resultArea.innerText = "違う言語です";
+  }
+  //ランダムに選ばれた言語が "JavaScript" なら、resultArea のテキストを "JavaScript" に設定。それ以外の場合は "違う言語です" に設定
+});
+```
+
 # 1109
 
 ### ー if 文による条件分岐
@@ -341,9 +591,13 @@ for (let i = 0; i < attackBtn.length; i++) {
 
 ```js
 const imageArea = document.querySelector("#mt-fuji");
+//imageArea: #mt-fuji というIDを持つ画像要素を取得
 const btns = document.querySelectorAll(".image-fuji");
+//btns: .image-fuji というクラスを持つボタン要素全体を取得
 const preBtn = document.querySelector(".pre");
+//preBtn: .pre というクラスを持つ前のボタン要素を取得
 const nextBtn = document.querySelector(".next");
+//nextBtn: .next というクラスを持つ次のボタン要素を取得
 
 let count = 0;
 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>三大栄養素</h1>
+    <ul>
+      <li class="protein">たんぱく質</li>
+      <li class="fats">脂質</li>
+      <li class="carbohydrate">炭水化物</li>
+    </ul>
+    <script>
+      for (let i = 0; i < nutrients.length; i++) {
+        nutrients[i].addEventListener("click", function () {
+          const nutrientType = this.className; // クリックされた<li>のクラス名を取得
+          console.log(`${nutrientType}をクリックしました。`);
+        });
+      }
+    </script>
+  </body>
+</html>
